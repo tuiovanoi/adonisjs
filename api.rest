@@ -1,0 +1,17 @@
+######### Registro de Usuário
+POST http://127.0.0.1:3333/register HTTP/1.1
+Content-Type: 'application/json'
+
+{
+    "name":"tulio",
+    "email":"tuliovrcpa2015@gamil.com",
+    "password":"12345" 
+}
+######### Autentificação de usuário
+POST http://127.0.0.1:3333/login HTTP/1.1
+Content-Type: 'application/json'
+
+{
+    "email":"tuliovrcpa2015@gmail.com",
+    "password":"12345"
+}
