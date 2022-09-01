@@ -1,8 +1,7 @@
 import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { SchemaConstructorContract } from '@ioc:Adonis/Lucid/Schema'
 
-export default class RegisterUserValidator {
+export default class FilmeValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -24,14 +23,8 @@ export default class RegisterUserValidator {
    *     ])
    *    ```
    */
-  public schema = schema.create({
-   name: schema.string({}, [
-     rules.required()
-   ]),
-  data: schema.dateTime({}, [
-    rules.required()
-  }),
-})
+  public schema = schema.create({})
+
   /**
    * Custom messages for validation failures. You can make use of dot notation `(.)`
    * for targeting nested fields and array expressions `(*)` for targeting all
@@ -44,5 +37,4 @@ export default class RegisterUserValidator {
    *
    */
   public messages: CustomMessages = {}
-    required "O {{field}} é obrigatório para cadastrar o tópico!!!",
 }
