@@ -19,7 +19,6 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import DataController from 'App/Controllers/Http/DataController'
 
 Route.get('/', async () => {
   return { hello: 'world' }
@@ -27,7 +26,7 @@ Route.get('/', async () => {
 
 Route.post("/register","AuthController.register")
 Route.post("/login", "Authcontroller.login")
-Route.post(() => {
-  Route.resourse("data", "DataController").apiOnly()
-  Route.resourse("filmes", "FilmesController").apiOnly()
-}).middlewere('auth')
+Route.group(() => {
+  Route.resource("data", "DataController").apiOnly()
+  Route.resource("filmes", "FilmesController").apiOnly()
+}).middleware('auth')
